@@ -20,11 +20,11 @@ if choice == "create":
     st.subheader("create")
     title = st.text_input ("Titulo")
     description = st.text_input ("Descrição")
-    status = st.selectbox("Status", listStatus)
+    # status = st.selectbox("Status", listStatus)
     button  = st.button ("salvar")
     
     if button:
-        create_task(title, description, status)
+        create_task(title, description)
         st.success("tarfa criada com sucesso")
         
         

@@ -10,12 +10,12 @@ def init_db():
                         id INTEGER PRIMARY KEY,
                         title TEXT,
                         description TEXT,
-                        status TEXT)""")    
+                        status TEXT )""")    
     conn.commit()
     conn.close()
     
     
-def create_task(title, description, status):
+def create_task(title, description, status="Pendente" ):
     conn = sql.connect('data.db')
     cursor = conn.cursor()
     cursor.execute("INSERT INTO tasks (title, description, status) VALUES (?, ?, ?)", (title, description, status))
